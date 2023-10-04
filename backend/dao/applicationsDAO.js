@@ -1,3 +1,6 @@
+import mongodb from "mongodb"
+const ObjectId = mongodb.ObjectId
+
 let applications
 
 export default class ApplicationsDAO {
@@ -15,8 +18,8 @@ export default class ApplicationsDAO {
     } = {}) {
         let query;
         if (filters) {
-            if ("username" in filters) {
-                query = { $text: { $search: filters["username"] } }; 
+            if ("email" in filters) {
+                query = { $text: { $search: filters["email"] } }; 
             }
         }
 
@@ -31,7 +34,6 @@ export default class ApplicationsDAO {
 
         try {
             const applicationsList = await cursor.toArray()
-            // console.log(applicationsList); 
             const totalNumApplications = await applications.countDocuments(query)
 
             return { applicationsList, totalNumApplications}
@@ -55,6 +57,7 @@ export default class ApplicationsDAO {
                 t2q1: questions.t2q1, 
                 t2q1a: questions.t2q1a, 
                 t2q2: questions.t2q2, 
+                user_id: ObjectId(user_id),
                 date: date,
             }
 

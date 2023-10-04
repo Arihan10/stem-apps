@@ -29,6 +29,7 @@ export default class ApplicationCtrl {
                 t2q1: req.body.t2q1, 
                 t2q1a: req.body.t2q1a, 
                 t2q2: req.body.t2q2, 
+                user_id: req.body.user_id,
             }
             const date = new Date(); 
 
