@@ -4,13 +4,9 @@ import './index.css';
 import Form from './Form';
 import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
-import { Outlet } from "react-router-dom";
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// router
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+console.log("hello world"); 
 
 const router = createBrowserRouter([
   {
