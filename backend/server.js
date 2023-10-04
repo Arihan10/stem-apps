@@ -8,6 +8,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/v1/applications", applications)
+console.log(app._router);
 app.use("*", (req, res) => res.status(404).json({ error: "route not found!"}))
 
 export default app
