@@ -27,7 +27,13 @@ function Dropdown({ id, options, answers, placeholder='', setSecondaryState }) {
               {
                 setSecondaryState(o);
               }
-              answers[id] = o;
+              let ans = o; 
+              if (ans == "Yes") ans = true; 
+              else if (o == "False") ans = false; 
+              else if (o == "Marketing & Outreach") ans = 1; 
+              else if (o == "Logistics & Finance") ans = 2; 
+              else if (o == "Technology") ans = 3; 
+              answers[id] = ans; 
             }
           }
           className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm focus:ring-2 focus:ring-blue-500 text-gray-400 hover:bg-gray-800 hover:text-gray-300" href="#">
@@ -71,30 +77,50 @@ function Form() {
 
   let form = [
     {
-      question: "What is your name?",
+      question: "What is your first name?",
       description: "",
       response:
         <TextResponse long={false}
-          id={"q1"}
+          id={"first"}
           answers={answers}
           placeholder='Enter name...'
         />,
     },
     {
-      question: "What grade are you in?",
+      question: "What is your second name?",
       description: "",
       response:
-        <Dropdown options={["Grade 9", "Grade 10", "Grade 11", "Grade 12"]}
-          id={"q2"}
-          placeholder={'Select Grade'}
+        <TextResponse long={false}
+          id={"last"}
+          answers={answers}
+          placeholder='Enter name...'
+        />,
+    },
+    {
+      question: "Have you ever attended an MLH hackathon before?",
+      description: "",
+      response:
+        <Dropdown options={["Yes", "No"]}
+          id={"q1"}
+          placeholder={'Select'}
           answers={answers}
         />,
     },
     {
-      question: "What team would you like to join?",
-      description: "Appropriate questions are asked based on team.",
+      question: "What event organizing experience do you have?",
+      description: "",
+      response:
+        <TextResponse long={true}
+          id={"q1"}
+          answers={answers}
+          placeholder='Enter explanation...'
+        />,
+    },
+    {
+      question: "What team are you interested in leading?",
+      description: "If accepted, we will determine whether you are fit for an Executive Leader of Executive role.",
       response: 
-        <Dropdown options={["Outreach", "Logistics", "Technology"]}
+        <Dropdown options={["Marketing & Outreach", "Logistics & Finance", "Technology"]}
           id={"team"}
           answers={answers}
           placeholder={'Select Team'}
@@ -102,8 +128,8 @@ function Form() {
         />,
     },
     {
-      team: "Outreach",
-      question: "Outreach Question A",
+      team: "Marketing & Outreach",
+      question: "Do you have experience managing any public facing social media?",
       description: "We need to know this for logistical reasons",
       response: 
         <TextResponse long={true}
@@ -112,8 +138,8 @@ function Form() {
         />,
     },
     {
-      team: "Outreach",
-      question: "Outreach Question B",
+      team: "Marketing & Outreach",
+      question: "Do you have experience with graphic design?",
       description: "We need to know this for logistical reasons",
       response: 
         <TextResponse long={true}
@@ -123,8 +149,8 @@ function Form() {
     },
     {
       team: "Technology",
-      question: "Technology Question A",
-      description: "We need to know this for logistical reasons",
+      question: "What technical experience do you have?",
+      description: "List any related clubs, organizations, activities and projects, as well as knowledge of tech-based frameworkes, services and fields.",
       response: 
         <TextResponse long={true}
           id={"t1q1"}
@@ -133,8 +159,8 @@ function Form() {
     },
     {
       team: "Technology",
-      question: "Technology Question B",
-      description: "We need to know this for logistical reasons",
+      question: "What teaching experience do you have?",
+      description: "List any related organizations.",
       response: 
         <TextResponse long={true}
           id={"t1q2"}
@@ -142,9 +168,9 @@ function Form() {
         />,
     },
     {
-      team: "Logistics",
-      question: "Logistics Question A",
-      description: "We need to know this for logistical reasons",
+      team: "Logistics & Finance",
+      question: "Have you ever organized or helped organize an event?",
+      description: "List any related organizations.",
       response: 
         <TextResponse long={true}
           id={"t2q1"}
@@ -152,9 +178,9 @@ function Form() {
         />,
     },
     {
-      team: "Logistics",
-      question: "Logistics Question A",
-      description: "We need to know this for logistical reasons",
+      team: "Logistics & Finance",
+      question: "If so, explain.",
+      description: "Have you ever organized or helped organize an event?",
       response: 
         <TextResponse long={true}
           id={"t2q1a"}
@@ -163,8 +189,8 @@ function Form() {
     },
     {
       team: "Logistics",
-      question: "Logistics Question B",
-      description: "We need to know this for logistical reasons",
+      question: "Do you have experience doing accounting or finances?",
+      description: "List any related organizations.",
       response: 
         <TextResponse long={true}
           id={"t2q2"}

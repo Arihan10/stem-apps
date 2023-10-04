@@ -7,12 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar"
 import { useState } from 'react';
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// router
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+console.log("hello world"); 
 
 const router = createBrowserRouter([
   {
