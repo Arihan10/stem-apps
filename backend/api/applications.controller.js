@@ -16,6 +16,7 @@ export default class ApplicationCtrl {
     }
 
     static async apiPostApplication(req, res, next) {
+        console.log(req)
         try {
             const email = req.body.email; 
             const questions = {

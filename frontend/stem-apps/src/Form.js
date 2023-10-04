@@ -18,7 +18,7 @@ function Dropdown({ id, options, answers, placeholder='', setSecondaryState }) {
 
       <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 mt-2 w-44 shadow-md rounded-lg p-2 bg-gray-900 border border-gray-700 divide-gray-700" aria-labelledby="hs-dropdown-default">
         {options.map(o => 
-          <a onClick=
+          <a key={o} onClick=
           {
             () => 
             {
@@ -176,12 +176,12 @@ function Form() {
   const targetQuestions = form.filter(q => q.team == null || q.team === team);
 
   const list = targetQuestions.map(
-    inquiry => <Question question={inquiry.question} desc={inquiry.description} response={inquiry.response} />
+    inquiry => <Question key={inquiry.question} question={inquiry.question} desc={inquiry.description} response={inquiry.response} />
     );
 
   const submit = () => {
     formService.Submit(answers);
-    nav('/complete');
+    //nav('/complete');
   }
 
   return (

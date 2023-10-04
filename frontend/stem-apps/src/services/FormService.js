@@ -5,7 +5,7 @@ class FormService
     async Submit(data)
     {
         console.log(data)
-        http.post("api/v1/responses", data)
+        http.post("api/v1/applications", data)
         .then(function (response)
         {
             console.log(response);
