@@ -1,6 +1,9 @@
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Home()
 {
+    let nav = useNavigate()
+
     return (
         <div className="w-full min-h-screen flex items-center justify-center">
             <div className="pb-80 flex flex-col items-center space-y-8">
@@ -10,7 +13,7 @@ function Home()
                 <h2 className="text-white font-sg text-4xl md:text-5xl">
                     Club
                 </h2>
-                <button type="button" className="applyBtn text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-lg px-8 py-5 text-center mt-6">
+                <button type="button" className="applyBtn text-white bg-gradient-to-br from-blue-500 to-green-500 hover:bg-gradient-to-bl hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-green-800 font-bold rounded-lg text-2xl px-10 py-4 text-center mt-8 transition-transform duration-200 animate-pulse" onClick={nav('/form')}>
                     APPLY
                 </button>
             </div>
