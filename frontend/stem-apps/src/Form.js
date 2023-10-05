@@ -51,9 +51,9 @@ function Dropdown({ id, options, answers, placeholder='', setSecondaryState }) {
               let ans = o; 
               if (ans == "Yes") ans = true; 
               else if (o == "No") ans = false; 
-              else if (o == "Marketing & Outreach") ans = 1; 
-              else if (o == "Logistics & Finance") ans = 2; 
-              else if (o == "Technology") ans = 3; 
+              else if (o == "Marketing & Outreach") ans = 0; 
+              else if (o == "Logistics & Finance") ans = 1; 
+              else if (o == "Technology") ans = 2; 
               console.log(answers); 
               answers[id] = ans; 
             }
@@ -210,7 +210,8 @@ function Form() {
   const submit = () => {
     console.log(answers); 
     formService.Submit(answers);
-    //nav('/complete');
+    nav('/complete');
+    //this.props.history.push('/complete')
   }
 
   return (

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Form/>,
       },
       {
-        path: "complete",
+        path: "/complete",
         element: <Complete/>
       }
     ]
