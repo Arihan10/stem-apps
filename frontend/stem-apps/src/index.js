@@ -12,8 +12,6 @@ import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
 import Signup from './Signup';
 
-console.log("hello world"); 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,12 +49,12 @@ const router = createBrowserRouter([
 export const UserContext = React.createContext(null);
 function NavWrapper()
 {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [authOverlay, setAuthOverlay] = useState(false);
   
   return (
     <div className="bg-zinc-950">
-      <UserContext.Provider value={{user: user, setUser: setUser}}>
+      <UserContext.Provider value={{user, setUser}}>
         <Navbar/>
         <Outlet/>
       </UserContext.Provider>

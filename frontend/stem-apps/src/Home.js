@@ -1,10 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import './index.css'
+import { UserContext } from ".";
 
 function Home()
 {
     const nav = useNavigate(0);
+    const state = useState(UserContext);
+    const context = useContext(UserContext)
+
+    useState(() => 
+    {
+      console.log("example:")
+      state.user = {name: "arihan sharma", email: "sofwarearihan@gmail.com"}
+    })
 
     return (
         <div className="w-full min-h-screen flex items-center justify-center">
