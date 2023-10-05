@@ -36,6 +36,11 @@ function Navbar()
             text: "Sign in",
             href: "/auth"
         },
+        {
+            auth: true,
+            text: "Sign up",
+            href: "/signup"
+        },
     ]
 
     let filtered = navItems.filter(e => {

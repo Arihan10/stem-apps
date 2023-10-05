@@ -13,7 +13,7 @@ function Home()
                 <h2 className="text-white font-sg text-2xl tracking-[0.5em] -mt-3">
                     CLUB
                 </h2>
-                <button onClick={() => {nav('auth')}} type="button" className="font-sg text-white bg-gradient-to-br from-rose-600 to-orange-400 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-8 py-2 text-center mt-10">
+                <button onClick={() => {nav('auth')}} type="button" className="font-sg text-white bg-gradient-to-br from-rose-600 to-orange-400 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-5 text-center mt-10 animate-pulse">
                     APPLY
                 </button>
             </div>

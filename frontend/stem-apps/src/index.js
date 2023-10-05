@@ -10,6 +10,7 @@ import Dashboard from './Dashboard';
 import Auth from './Auth';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
+import Signup from './Signup';
 
 console.log("hello world"); 
 
@@ -36,8 +37,12 @@ const router = createBrowserRouter([
         element: <Dashboard/>
       },
       {
-        path: "auth",
+        path: "/auth",
         element: <Auth/>
+      },
+      {
+        path: "/signup",
+        element: <Signup/>
       }
     ]
   },
