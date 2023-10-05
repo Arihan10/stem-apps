@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { UserContext } from '.';
 import logo from './logo.svg';
 import formService from './services/FormService';
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -90,12 +91,19 @@ function Question({ question, desc, response}) {
   );
 }
 
-function Form() {
+function Form()
+{
   /*let answers = { }
   answers["email"] = "sofwarearihan";*/
+  const nav = useNavigate();
   const [team, setTeam] = useState('')
-
-  let nav = useNavigate()
+  const user = useContext(UserContext);
+  useEffect(() => {
+      if (!user.email) // or some field ***
+      {
+        nav('/auth');
+      }
+  }, [])
 
   let form = [
     {

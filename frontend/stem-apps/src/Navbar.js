@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from ".";
 
 function NavItem(data) {
     return (
@@ -12,22 +14,34 @@ function NavItem(data) {
 
 function Navbar()
 {
+    const user = useContext(UserContext);
     const navItems = [
         {
+            auth: true,
             text: "Home",
             href: "/"
         },
         {
+            auth: true,
             text: "Info",
             href: "/info"
         },
         {
+            auth: false,
             text: "Executive Applications",
             href: "/form"
         },
+        {
+            auth: true,
+            text: "Sign in",
+            href: "/auth"
+        },
     ]
 
-    const NavItemsJSX = Object.entries(navItems).map(([index, res]) => {
+    let filtered = navItems.filter(e => {
+        return e.auth === null || (e.auth === true && user !== null)
+    });
+    const NavItemsJSX = Object.entries(filtered).map(([index, res]) => {
         return (
             <NavItem key={index} text={res.text} href={res.href} />
         )
