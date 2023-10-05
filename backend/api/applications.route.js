@@ -10,6 +10,7 @@ router
     .get(ApplicationCtrl.apiGetApplications)
     .post(ApplicationCtrl.apiPostApplication)
 
+router.route("/users").get(UserCtrl.apiGetUsers)
 router.route("/id/:id").get(UserCtrl.apiGetUserById)
 router.route("/email/:email").get(UserCtrl.apiGetUserByEmail)
 
