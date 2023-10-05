@@ -4,6 +4,9 @@ import './index.css';
 import Form from './Form';
 import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar"
+import { useState } from 'react';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 console.log("hello world"); 
@@ -11,19 +14,42 @@ console.log("hello world");
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Form/>,
+    element: <NavWrapper/>,
+    children: [
+      {
+        path: "/form",
+        element: <Form/>,
+      },
+      {
+        path: "complete",
+        element: <Complete/>
+      }
+    ]
   },
-  {
-    path: "complete",
-    element: <Complete/>
-  }
 ]);
+
+export const UserContext = React.createContext(null);
+function NavWrapper()
+{
+  const [user, setUser] = useState(null);
+  const [authOverlay, setAuthOverlay] = useState(false);
+  
+  return (
+    <div>
+      <UserContext.Provider value={{user: user, setUser: setUser, authOverlay: authOverlay, setAuthOverlay: setAuthOverlay}}>
+        <Navbar/>
+        <div className='pt-10'>
+          <Outlet/>
+        </div>
+      </UserContext.Provider>
+    </div>
+  )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <Outlet />
   </React.StrictMode>
 );
 

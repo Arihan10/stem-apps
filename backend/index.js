@@ -22,6 +22,7 @@ MongoClient.connect(
     process.exit(1)
 })
 .then(async client => {
+    console.log("abc")
     await ApplicationsDAO.injectDB(client); 
     await UsersDAO.injectDB(client); 
     app.listen(port, () => {

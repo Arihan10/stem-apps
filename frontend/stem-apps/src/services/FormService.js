@@ -12,7 +12,7 @@ class FormService
         })
         .catch(function (error) 
         {
-            console.log(error);
+            console.log(error.response);
         })
         .finally(function () {
 
