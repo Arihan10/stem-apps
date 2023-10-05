@@ -64,7 +64,6 @@
     margin: 1rem;
     border-radius: 2rem;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .card-image {
@@ -119,7 +118,6 @@
     position: relative;
     border-radius: 0;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .card-letters {
@@ -132,7 +130,6 @@
     width: 100%;
     color: white;
     font-size: var(--font-size);
-    font-weight: 500;
     word-wrap: break-word;
     opacity: 0;
     transition: opacity 400ms;
