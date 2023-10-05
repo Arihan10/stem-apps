@@ -5,8 +5,10 @@ import Form from './Form';
 import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./Navbar"
+import Home from './Home';
 import { useState } from 'react';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NotFound from './not-found';
 
 console.log("hello world"); 
 
@@ -14,7 +16,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <NavWrapper/>,
+    errorElement: <NotFound/>,
     children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
       {
         path: "/form",
         element: <Form/>,
@@ -34,12 +41,10 @@ function NavWrapper()
   const [authOverlay, setAuthOverlay] = useState(false);
   
   return (
-    <div>
+    <div className="bg-zinc-950">
       <UserContext.Provider value={{user: user, setUser: setUser, authOverlay: authOverlay, setAuthOverlay: setAuthOverlay}}>
         <Navbar/>
-        <div className='pt-10'>
-          <Outlet/>
-        </div>
+        <Outlet/>
       </UserContext.Provider>
     </div>
   )

@@ -18,13 +18,13 @@ function Navbar()
             href: "/"
         },
         {
-            text: "Resources",
-            href: "/resources"
+            text: "Info",
+            href: "/info"
         },
         {
-            text: "Help",
-            href: "/help"
-        }
+            text: "Executive Applications",
+            href: "/form"
+        },
     ]
 
     const NavItemsJSX = Object.entries(navItems).map(([index, res]) => {
@@ -34,11 +34,9 @@ function Navbar()
     });
 
   return (
-    <div className="fixed w-full">
-        <div className="z-20 bg-black sticky backdrop-blur-sm border-b-2 rounded-bl-xl rounded-br-xl border-white/10 top-0 w-full flex justify-center">
-            <div className="flex flex-row gap-5 p-5 justify-center max-w-6xl grow">
-                {NavItemsJSX}
-            </div>
+    <div className="z-20 bg-zinc-950/90 sticky backdrop-blur-sm border-b-2 rounded-bl-xl rounded-br-xl border-white/10 top-0 w-full flex justify-center">
+        <div className="flex flex-row gap-5 p-5 justify-center max-w-6xl grow">
+            {NavItemsJSX}
         </div>
     </div>
   );
