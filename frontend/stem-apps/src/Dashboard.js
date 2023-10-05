@@ -10,10 +10,17 @@ let user = {
 
 function Dashboard()
 {
+    const nav = useNavigate(); 
+
     const context = useContext(UserContext);
     const [userData, setUser] = useState(null); 
 
     useEffect(() => {
+        if (!context.user) // or some field ***
+        {
+            nav('/auth');
+        }
+
         const fetchData = async () => {
           try {
             const response = await userService.GetUserById(context.user._id); 
