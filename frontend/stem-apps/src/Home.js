@@ -19,13 +19,16 @@ function Home()
     return (
         <div className="overflow-hidden w-full min-h-screen flex items-center justify-center">
             <CardEffect/>
-            <div className="itemsCenter pb-80 flex flex-col items-center">
-                <h1 className="font-sg font-bold text-6xl md:text-9xl text-white">
+            <div className="mainContent itemsCenter pb-[7rem] flex flex-col items-center">
+                <h1 className="font-sg font-bold text-6xl md:text-9xl bg-gradient-to-r from-lime-300 to-teal-300 bg-clip-text text-transparent">
                     STEM
                 </h1>
                 <h2 className="text-white font-sg text-2xl tracking-[0.5em] -mt-3 text-center mt-10">
                     CLUB
                 </h2>
+                <button onClick={() => {nav('form')}} type="button" className="font-sg text-black bg-gradient-to-r from-lime-300 to-teal-300 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-5 text-center mt-10">
+                    APPLY
+                </button>
             </div>
         </div>
     );
@@ -50,13 +53,11 @@ function CardEffect() {
     }
   
     return (
-      <div className="card-track">
-        <div className="card-wrapper">
+      <div className="overflow-hiddden card-track">
+        <div className="overflow-hidden card-wrapper">
           <div className="card" onMouseMove={(e) => handleOnMove(e, e.currentTarget)}>
             <div className="card-image">
-                <button onClick={() => {nav('form')}} type="button" className="font-sg text-white bg-gradient-to-br from-rose-600 to-orange-400 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-5 text-center mt-10">
-                    APPLY
-                </button>
+                
             </div>
             <div className="card-gradient"></div>
             <div className="card-letters">{randomText}</div>
