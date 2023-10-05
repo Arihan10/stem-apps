@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from ".";
 
 function NavItem(data) {
@@ -14,40 +14,42 @@ function NavItem(data) {
 
 function Navbar()
 {
-    const user = useContext(UserContext);
-    const context = useContext(UserContext)
+    const context = useContext(UserContext); 
+    let filtered = {}; 
+
 
     const navItems = [
         {
-            auth: true,
             text: "Home",
             href: "/"
         },
         {
-            auth: true,
             text: "Info",
             href: "/info"
         },
         {
-            auth: false,
-            text: "Executive Applications",
+            auth: true,
+            text: "Applications",
             href: "/form"
         },
         {
-            auth: true,
+            auth: false,
             text: "Sign in",
             href: "/auth"
         },
         {
-            auth: true,
+            auth: false,
             text: "Sign up",
             href: "/signup"
         },
     ]
+        console.log(context.user); 
+        filtered = navItems.filter(e => {
+            //console.log((("auth" in e) === false) || ((e.auth === true) != (context.user !== null)) + " shit " + e.text + " fuck " + ("auth" in e)); 
+            console.log((("auth" in e) === false) + " " + e.text + " " + ((e.auth === true) === (context.user != null)) + " hello " + (context.user != null))
+            return (("auth" in e) === false) || ((e.auth === true) === (context.user != null))
+        }); 
 
-    let filtered = navItems.filter(e => {
-        return e.auth === null || (e.auth === true && user !== null)
-    });
     const NavItemsJSX = Object.entries(filtered).map(([index, res]) => {
         return (
             <NavItem key={index} text={res.text} href={res.href} />

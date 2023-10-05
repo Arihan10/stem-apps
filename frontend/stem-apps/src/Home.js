@@ -53,7 +53,7 @@ function CardEffect() {
         <div className="card-wrapper">
           <div className="card" onMouseMove={(e) => handleOnMove(e, e.currentTarget)}>
             <div className="card-image">
-                <button onClick={() => {nav('auth')}} type="button" className="font-sg text-white bg-gradient-to-br from-rose-600 to-orange-400 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-5 text-center mt-10">
+                <button onClick={() => {nav('form')}} type="button" className="font-sg text-white bg-gradient-to-br from-rose-600 to-orange-400 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-5 text-center mt-10">
                     APPLY
                 </button>
             </div>

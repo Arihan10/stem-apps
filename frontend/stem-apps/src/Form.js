@@ -100,8 +100,6 @@ function Question({ question, desc, response}) {
 
 function Form()
 {
-  /*let answers = { }
-  answers["email"] = "sofwarearihan";*/
   const nav = useNavigate();
   const [team, setTeam] = useState('')
   const context = useContext(UserContext)
