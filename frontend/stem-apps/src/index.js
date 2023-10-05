@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Form from './Form';
@@ -6,7 +6,7 @@ import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./Navbar"
 import Home from './Home';
-import { useState } from 'react';
+import Auth from './Auth';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
 
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "complete",
         element: <Complete/>
+      },
+      {
+        path: "auth",
+        element: <Auth/>
       }
     ]
   },
@@ -42,7 +46,7 @@ function NavWrapper()
   
   return (
     <div className="bg-zinc-950">
-      <UserContext.Provider value={{user: user, setUser: setUser, authOverlay: authOverlay, setAuthOverlay: setAuthOverlay}}>
+      <UserContext.Provider value={{user: user, setUser: setUser}}>
         <Navbar/>
         <Outlet/>
       </UserContext.Provider>
