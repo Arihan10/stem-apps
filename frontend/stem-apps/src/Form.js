@@ -4,6 +4,27 @@ import formService from './services/FormService';
 import { Navigate, useNavigate } from 'react-router-dom';
 import('preline')
 
+let user = {
+  "_id": "651cf8c9d80230379adb466c",
+  "email": "sofwarearihan@gmail.com",
+  "first": "Arihan",
+  "last": "Sharma",
+}
+
+let answers = { 
+  "user_id": user._id, 
+  "q1": "",
+  "q2": false,
+  "team": 0,
+  "t0q1": "",
+  "t0q2": "",
+  "t1q1": "",
+  "t1q2": "",
+  "t2q1": "",
+  "t2q1a": "",
+  "t2q2": "",
+}
+
 function Dropdown({ id, options, answers, placeholder='', setSecondaryState }) {
   const [state, setState] = useState(placeholder);
 
@@ -29,10 +50,11 @@ function Dropdown({ id, options, answers, placeholder='', setSecondaryState }) {
               }
               let ans = o; 
               if (ans == "Yes") ans = true; 
-              else if (o == "False") ans = false; 
+              else if (o == "No") ans = false; 
               else if (o == "Marketing & Outreach") ans = 1; 
               else if (o == "Logistics & Finance") ans = 2; 
               else if (o == "Technology") ans = 3; 
+              console.log(answers); 
               answers[id] = ans; 
             }
           }
@@ -69,33 +91,13 @@ function Question({ question, desc, response}) {
 }
 
 function Form() {
-
-  let answers = { }
+  /*let answers = { }
+  answers["email"] = "sofwarearihan";*/
   const [team, setTeam] = useState('')
 
   let nav = useNavigate()
 
   let form = [
-    {
-      question: "What is your first name?",
-      description: "",
-      response:
-        <TextResponse long={false}
-          id={"first"}
-          answers={answers}
-          placeholder='Enter name...'
-        />,
-    },
-    {
-      question: "What is your second name?",
-      description: "",
-      response:
-        <TextResponse long={false}
-          id={"last"}
-          answers={answers}
-          placeholder='Enter name...'
-        />,
-    },
     {
       question: "Have you ever attended an MLH hackathon before?",
       description: "",
@@ -111,7 +113,7 @@ function Form() {
       description: "",
       response:
         <TextResponse long={true}
-          id={"q1"}
+          id={"q2"}
           answers={answers}
           placeholder='Enter explanation...'
         />,
@@ -206,6 +208,7 @@ function Form() {
     );
 
   const submit = () => {
+    console.log(answers); 
     formService.Submit(answers);
     //nav('/complete');
   }
