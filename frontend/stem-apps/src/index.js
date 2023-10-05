@@ -5,6 +5,7 @@ import Form from './Form';
 import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./Navbar"
+import Home from './Home';
 import { useState } from 'react';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     element: <NavWrapper/>,
     errorElement: <NotFound/>,
     children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
       {
         path: "/form",
         element: <Form/>,
