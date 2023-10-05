@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+// import './index.css';
 import Form from './Form';
 import Complete from './Complete';
 import reportWebVitals from './reportWebVitals';
@@ -11,6 +11,7 @@ import Auth from './Auth';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
 import Signup from './Signup';
+import UserInfo from './UserInfo';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup/>
+      },
+      {
+        path: "/info",
+        element: <UserInfo/>
       }
     ]
   },

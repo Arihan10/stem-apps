@@ -230,7 +230,7 @@ function Form()
   }
 
   return (
-    <div className="bg-zinc-950 min-h-screen flex flex-row justify-center">
+    <div className="ourForm bg-zinc-950 min-h-screen flex flex-row justify-center">
       <div className="bg-zinc-950 p-10 w-full md:w-9/12 max-w-6xl flex flex-col gap-5">
         <div className="py-5 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 rounded-xl border-zinc-900">
           <h1 className="font-bold text-7xl font-sg">STEM CLUB</h1>

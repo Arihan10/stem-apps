@@ -24,13 +24,13 @@ function Navbar()
             href: "/"
         },
         {
-            text: "Info",
+            text: "User",
             href: "/info"
         },
         {
             auth: true,
-            text: "Applications",
-            href: "/form"
+            text: "Dashboard",
+            href: "/dash"
         },
         {
             auth: false,

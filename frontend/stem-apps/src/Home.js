@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
 import './index.css'
+// import './home.css'
 import { UserContext } from ".";
 
 function Home()
@@ -16,9 +17,9 @@ function Home()
     })
 
     return (
-        <div className="w-full min-h-screen flex items-center justify-center">
+        <div className="overflow-hidden w-full min-h-screen flex items-center justify-center">
             <CardEffect/>
-            <div className="pb-80 flex flex-col items-center">
+            <div className="itemsCenter pb-80 flex flex-col items-center">
                 <h1 className="font-sg font-bold text-6xl md:text-9xl text-white">
                     STEM
                 </h1>

@@ -2,13 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import formService from './services/FormService';
 import { Navigate, useNavigate } from 'react-router-dom'; 
 import userService from './services/UserService';
-import { UserContext } from '.';
+import { UserContext } from '.'; 
 
-let user = {
-    "_id": "651cf8c9d80230379adb466c"
-}
-
-function Dashboard()
+function UserInfo()
 {
     const context = useContext(UserContext);
     const [userData, setUser] = useState(null); 
@@ -54,4 +50,4 @@ function Dashboard()
     );
 }
 
-export default Dashboard;
+export default UserInfo;

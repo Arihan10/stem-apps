@@ -32,17 +32,17 @@ code {
   --hyperplexed-main-rgb: 41 121 255;
   --hyperplexed-main-light-rgb: 56 182 255;
   --hyperplexed-secondary-rgb: 42 252 152;
-    
+  
   --card-size: 480px;
   --font-size: 0.8rem;
   --logo-size: calc(var(--card-size) * 0.3);
 }
 
-body {
+.homePage {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
@@ -53,6 +53,10 @@ body {
   justify-content: center;
   overflow: hidden;
   font-family: 'Noto Sans', sans-serif;
+}
+
+.itemsCenter {
+  overflow: hidden;
 }
 
 * {
@@ -103,37 +107,14 @@ body {
   width: 100%;
   position: absolute;
   background: radial-gradient(
-    rgb(var(--hyperplexed-main-rgb)) 50%, 
-    rgb(var(--hyperplexed-main-light-rgb)),
-    rgb(var(--hyperplexed-secondary-rgb))
+  rgb(var(--hyperplexed-main-rgb)) 50%, 
+  rgb(var(--hyperplexed-main-light-rgb)),
+  rgb(var(--hyperplexed-secondary-rgb))
   );
   mix-blend-mode: darken; 
   pointer-events: none;
   z-index: 3;
 }
-
-/*.card-letters {
-  --x: 0px;
-  --y: 0px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  color: white;
-  font-size: var(--font-size);
-  font-weight: 500;
-  word-wrap: break-word;
-  opacity: 0;
-  transition: opacity 400ms;
-  -webkit-mask-image: radial-gradient(
-    calc(var(--card-size) * 0.8) circle at var(--x) var(--y), 
-    rgb(255 255 255) 20%, 
-    rgb(255 255 255 / 25%), 
-    transparent
-  );
-  scale: 1.03;
-}*/
 
 .card:hover .card-letters {
   opacity: 1;
@@ -179,10 +160,10 @@ body {
   opacity: 0;
   transition: opacity 400ms;
   -webkit-mask-image: radial-gradient(
-    80vmin circle at var(--x) var(--y), 
-    rgb(255 255 255) 20%, 
-    rgb(255 255 255 / 25%), 
-    transparent
+  80vmin circle at var(--x) var(--y), 
+  rgb(255 255 255) 20%, 
+  rgb(255 255 255 / 25%), 
+  transparent
   );
   scale: 1.03;
 }
