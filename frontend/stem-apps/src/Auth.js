@@ -24,6 +24,13 @@ function Auth()
         try {
             const response = await userService.Verify(user); 
             console.log(response); 
+            
+            if (response == true) {
+                const newResponse = await userService.GetUserByEmail(user.email); 
+                console.log(newResponse.data); 
+                context.setUser(newResponse.data);
+                nav('/form'); 
+            }
         } catch (e) {
             console.error(`Bruhhhhh auth error ${e}`); 
         }

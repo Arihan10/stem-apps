@@ -9,7 +9,7 @@ function Auth()
     const [first, setFirst] = useState(''); 
     const [last, setLast] = useState(''); 
     const [password, setPassword] = useState(''); 
-    const useContext = useContext(UserContext);
+    const context = useContext(UserContext);
 
     const nav = useNavigate(); 
 

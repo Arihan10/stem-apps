@@ -43,6 +43,18 @@ class UserService
             console.log(error.response);
         }
     }
+
+    async GetUserByEmail(email) {
+        try {
+            console.log(email); 
+            const response = await http.get("api/v1/applications/email/"+encodeURIComponent(email)); 
+            console.log(response); 
+            return response;
+        } catch(error) 
+        {
+            console.log(error.response);
+        }
+    }
 }
 
 const userService = new UserService(); 
