@@ -15,6 +15,8 @@ function NavItem(data) {
 function Navbar()
 {
     const user = useContext(UserContext);
+    const context = useContext(UserContext)
+
     const navItems = [
         {
             auth: true,

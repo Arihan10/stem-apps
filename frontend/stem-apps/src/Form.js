@@ -12,6 +12,13 @@ let user = {
   "last": "Sharma",
 }
 
+let user2 = {
+  "_id": "651cf8c9d80230379adb466c",
+  "email": "sofwarearihan@gmail.com",
+  "first": "Arihan",
+  "last": "Sharma",
+}
+
 let answers = { 
   "user_id": user._id, 
   "q1": "",
@@ -97,9 +104,11 @@ function Form()
   answers["email"] = "sofwarearihan";*/
   const nav = useNavigate();
   const [team, setTeam] = useState('')
-  const user = useContext(UserContext);
+  const context = useContext(UserContext)
+  console.log(context.user)
+
   useEffect(() => {
-      if (!user.email) // or some field ***
+      if (!context.user) // or some field ***
       {
         nav('/auth');
       }
