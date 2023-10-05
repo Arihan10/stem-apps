@@ -8,14 +8,14 @@ function Home()
 
     return (
         <div className="w-full min-h-screen flex items-center justify-center">
+            <CardEffect/>
             <div className="pb-80 flex flex-col items-center">
                 <h1 className="font-sg font-bold text-6xl md:text-9xl text-white">
                     STEM
                 </h1>
-                <h2 className="text-white font-sg text-2xl tracking-[0.5em] -mt-3">
+                <h2 className="text-white font-sg text-2xl tracking-[0.5em] -mt-3 text-center mt-10">
                     CLUB
                 </h2>
-                <CardEffect/>
             </div>
         </div>
     );
@@ -32,7 +32,7 @@ function CardEffect() {
             x = e.clientX - rect.left,
             y = e.clientY - rect.top;
             
-      setRandomText(Array.from(Array(1500)).map(() => chars[Math.floor(Math.random() * (chars.length - 1))]).join(""));
+      setRandomText(Array.from(Array(15000)).map(() => chars[Math.floor(Math.random() * (chars.length - 1))]).join(""));
       
       const letters = ref.querySelector(".card-letters");
       letters.style.setProperty("--x", `${x}px`);
