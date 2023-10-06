@@ -54,7 +54,7 @@ function Dashboard()
         ) : userData.status == "pending" ? (
         <>
             <h1 className="font-sg font-bold text-6xl md:text-9xl bg-gradient-to-r from-blue-400 to-teal-300 bg-clip-text text-transparent animate-pulse">PENDING</h1>
-            <p className="text-white font-sg text-4xl md:text-5xl animate-pulse">Stay tuned! (Kavya pls dont kill me)</p>
+            <p className="text-white font-sg text-4xl md:text-5xl animate-pulse">Stay tuned!</p>
         </>
         ) : null }
     </div>

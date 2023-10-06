@@ -140,7 +140,7 @@ function Form() {
   let form = [
     {
       question: "Have you ever attended an MLH hackathon before?",
-      description: "",
+      description: "Major League Hacking",
       response:
         <Dropdown options={["Yes", "No"]}
           id={"q1"}
@@ -150,7 +150,7 @@ function Form() {
     },
     {
       question: "What event organizing experience do you have?",
-      description: "",
+      description: "Lst all related organizations.",
       response:
         <TextResponse long={true}
           id={"q2"}
@@ -172,7 +172,7 @@ function Form() {
     {
       team: "Marketing & Outreach",
       question: "Do you have experience managing any public facing social media?",
-      description: "We need to know this for logistical reasons",
+      description: "Instagram/Facebook/Google Clasrooom, etc.",
       response:
         <TextResponse long={true}
           id={"t0q1"}
@@ -182,7 +182,7 @@ function Form() {
     {
       team: "Marketing & Outreach",
       question: "Do you have experience with graphic design?",
-      description: "We need to know this for logistical reasons",
+      description: "Feel free to provide image links.",
       response:
         <TextResponse long={true}
           id={"t0q2"}
@@ -211,8 +211,8 @@ function Form() {
     },
     {
       team: "Logistics & Finance",
-      question: "Have you ever organized or helped organize an event?",
-      description: "List any related organizations.",
+      question: "Have you ever spoken to or had any interaction with the school administration?",
+      description: "List the schools and people involved.",
       response:
         <TextResponse long={true}
           id={"t2q1"}
@@ -221,8 +221,8 @@ function Form() {
     },
     {
       team: "Logistics & Finance",
-      question: "If so, explain.",
-      description: "Have you ever organized or helped organize an event?",
+      question: "Are you involved in an adminsitrative/leadership position in any other clubs/organizations?",
+      description: "We need to know this for logistical reasons.",
       response:
         <TextResponse long={true}
           id={"t2q1a"}
@@ -230,7 +230,7 @@ function Form() {
         />,
     },
     {
-      team: "Logistics",
+      team: "Logistics & Finance",
       question: "Do you have experience doing accounting or finances?",
       description: "List any related organizations.",
       response:
