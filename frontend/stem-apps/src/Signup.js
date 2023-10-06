@@ -26,7 +26,8 @@ function Auth()
             last: last,
             password: password,
         }
-        userService.SignUp(user); 
+        const response = userService.SignUp(user); 
+        if (response.error == null) nav('../auth'); 
     }; 
 
     const redirLogin = () => {
