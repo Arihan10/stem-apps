@@ -9,7 +9,7 @@ export default class ApplicationsDAO {
         try {
             applications = await conn.db(process.env.STEMAPPS_NS).collection("applications")
         } catch (e) {
-            console.error(`Unable to establish an error my nigga`)
+            console.error(`Unable to establish a connection`)
         }
     }
 
@@ -38,7 +38,7 @@ export default class ApplicationsDAO {
 
             return { applicationsList, totalNumApplications }
         } catch (e) {
-            console.error(`Unable to convert cursor to array or problem counting documents, FUCKHEAD ${e}`)
+            console.error(`Unable to convert cursor to array or problem counting documents ${e}`)
             return { applicationsList: [], totalNumApplications: 0 }
         }
     }*/
@@ -83,7 +83,7 @@ export default class ApplicationsDAO {
             return { applicationsList, totalNumApplications: 10 };
             // return await applications.aggregate(pipeline).next()
     } catch (e) {
-            console.error(`Unable to convert cursor to array or problem counting documents, FUCKHEAD ${e}`)
+            console.error(`Unable to convert cursor to array or problem counting documents ${e}`)
             return { applicationsList: [], totalNumApplications: 0 }
         }
     }
