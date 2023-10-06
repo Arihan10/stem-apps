@@ -8,15 +8,15 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-let user = {
+/*let user = {
   "_id": "651cf8c9d80230379adb466c",
   "email": "sofwarearihan@gmail.com",
   "first": "Arihan",
   "last": "Sharma",
-}
+}*/
 
 let answers = {
-  "user_id": user._id,
+  "user_id": "",
   "q1": "",
   "q2": false,
   "team": 0,
@@ -127,15 +127,30 @@ function Form() {
   const nav = useNavigate();
 
   const [team, setTeam] = useState('')
+  // const [submitted, setSubmitted] = useState(false); 
   const context = useContext(UserContext)
   console.log(context.user)
+
+  useEffect(() => {
+    async function fetchUserInfo() {
+      let response = await formService.FormsSubmittedNumber(context.user._id); 
+      if (response > 0) nav('../dash'); 
+    }
+
+    if (!context.user) // or some field ***
+    {
+      nav('../auth');
+    } else {
+      fetchUserInfo(); 
+    }
+  }, [])
 
   useEffect(() => {
     if (!context.user) // or some field ***
     {
       nav('../auth');
     }
-  }, [])
+  })
 
   let form = [
     {
@@ -248,6 +263,7 @@ function Form() {
   );
 
   const submit = () => {
+    answers["user_id"] = context.user._id; 
     console.log(answers);
     formService.Submit(answers);
     nav('../complete');
@@ -265,10 +281,9 @@ function Form() {
         <div className="flex flex-col gap-5">
           {list}
         </div>
-
-      <button onClick={() => submit()} className='button py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-sg pointer-events-auto'>
-        Submit
-      </button>
+        <button onClick={() => submit()} className='button py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-sg pointer-events-auto'>
+          Submit
+        </button>
       </div>
     </div>
   );
