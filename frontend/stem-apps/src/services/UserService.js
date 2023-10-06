@@ -8,7 +8,8 @@ class UserService
         http.post("api/v1/applications/signup", user)
         .then(function (response)
         {
-            console.log(response);
+            console.log(response); 
+            return response.data; 
         })
         .catch(function (error) 
         {

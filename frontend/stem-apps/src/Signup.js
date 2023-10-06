@@ -26,7 +26,7 @@ function Auth()
             last: last,
             password: password,
         }
-        userService.SignUp(user); 
+        const response = userService.SignUp(user); 
     }; 
 
     const redirLogin = () => {

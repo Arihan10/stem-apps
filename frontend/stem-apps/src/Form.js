@@ -242,7 +242,7 @@ function Form()
           {list}
         </div>
 
-      <button onClick={() => submit()} className='button py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-sg'>
+      <button onClick={() => submit()} className='button py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-sg pointer-events-auto'>
         Submit
       </button>
       </div>
