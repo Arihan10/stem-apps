@@ -42,7 +42,7 @@ function Auth()
 
     return (
         <div className="w-full min-h-screen grid items-center justify-center">
-                <div className="bg-zinc-900/20 rounded-lg p-10 w-[17rem] lg:w-[30rem] flex flex-col gap-5">
+                <div className="bg-zinc-900/20 rounded-lg p-10 w-[17rem] md:w-[30rem] flex flex-col gap-5">
                     <h1 className="font-sg font-bold text-3xl md:text-4xl bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                         Log In
                     </h1>
