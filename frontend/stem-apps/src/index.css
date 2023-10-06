@@ -85,6 +85,18 @@ code {
     overflow: hidden;
 }
 
+.card2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  position: relative;
+  /* margin: 1rem; */
+  border-radius: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .mainContent {
   z-index: 10; 
   pointer-events: none;
@@ -120,6 +132,10 @@ code {
     opacity: 1;
 }
 
+.card2:hover .card-letters {
+  opacity: 1;
+}
+
 /* START */
 
 .card-track {
@@ -143,6 +159,19 @@ code {
     border-radius: 0;
     overflow: hidden;
     top: 0;
+}
+
+.card2 {
+  width: 100vw;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  top: 0;
 }
 
 .card-letters {

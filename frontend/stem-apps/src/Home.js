@@ -37,42 +37,42 @@ function Home()
 }
 
 function CardEffect() {
-    const nav = useNavigate(0);
+  const nav = useNavigate(0);
 
-    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    //const chars = "░▒▓";
-    const [randomText, setRandomText] = useState("");
-    
-    const handleOnMove = (e, ref) => {
-      const rect = ref.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top;
-            
-      setRandomText(Array.from(Array(15000)).map(() => chars[Math.floor(Math.random() * (chars.length - 1))]).join(""));
-      
-      const letters = ref.querySelector(".card-letters");
-      letters.style.setProperty("--x", `${x}px`);
-      letters.style.setProperty("--y", `${y}px`);
-    }
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const [randomText, setRandomText] = useState("");
   
-    return (
-      <div className="overflow-hiddden card-track">
-        <div className="overflow-hidden card-wrapper">
-          <div className="card" onMouseMove={(e) => handleOnMove(e, e.currentTarget)}>
-            <div className="card-image">
-            </div>
-            <div className="card-gradient"></div>
-            <div className="card-letters tracking-[0.2em]">{randomText}</div>
+  const handleOnMove = (e, ref) => {
+    const rect = ref.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
+          
+    setRandomText(Array.from(Array(15000)).map(() => chars[Math.floor(Math.random() * (chars.length - 1))]).join(""));
+    
+    const letters = ref.querySelector(".card-letters");
+    letters.style.setProperty("--x", `${x}px`);
+    letters.style.setProperty("--y", `${y}px`);
+  }
+
+  return (
+    <div className="overflow-hiddden card-track">
+      <div className="overflow-hidden card-wrapper">
+        <div className="card" onMouseMove={(e) => handleOnMove(e, e.currentTarget)}>
+          <div className="card-image">
+              
           </div>
-          <div className="card-corners">
-            <span className="card-corner"></span>
-            <span className="card-corner"></span>
-            <span className="card-corner"></span>
-            <span className="card-corner"></span>
-          </div>
+          <div className="card-gradient"></div>
+          <div className="card-letters">{randomText}</div>
+        </div>
+        <div className="card-corners">
+          <span className="card-corner"></span>
+          <span className="card-corner"></span>
+          <span className="card-corner"></span>
+          <span className="card-corner"></span>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default Home;

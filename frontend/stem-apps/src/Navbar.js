@@ -24,6 +24,7 @@ function Navbar()
             href: "/"
         },
         {
+            auth: true,
             text: "User",
             href: "/info"
         },
