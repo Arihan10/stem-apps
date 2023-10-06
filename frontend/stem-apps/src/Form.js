@@ -90,7 +90,7 @@ function TextResponse({id, answers, long, placeholder=''}) {
 
 function Question({ question, desc, response}) {
   return (
-    <div className="bg-zinc-950/70 backdrop-blur-[10px] py-8 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 mb-2 rounded-xl border-zinc-900/50">
+    <div className="bg-zinc-950/60 backdrop-blur-[5px] py-8 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 mb-2 rounded-xl border-zinc-900/100">
       <h1 className="font-bold text-2xl font-sg">{question}</h1>
       <p className="text-gray-300 font-sg">{desc}</p>
         {response}
@@ -233,10 +233,10 @@ function Form()
   return (
     <div className="ourForm bg-zinc-950 min-h-screen flex flex-row justify-center pointer-events-auto">
       <CardEffect />
-      <div className="mainContent p-10 w-full md:w-9/12 max-w-6xl flex flex-col gap-5 bg-transparent">
+      <div className="mainContent p-10 bg-zinc-950/10 backdrop-blur-[5px] w-full md:w-9/12 max-w-6xl flex flex-col gap-5">
         <div className="bg-zinc-950/70 backdrop-blur-[10px] py-5 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 rounded-xl border-zinc-900">
           <h1 className="font-bold text-7xl font-sg">STEM CLUB</h1>
-          <h2 className="text-gray-500"> Executive Applications</h2>
+          <h2 className="text-gray-500">Executive Applications</h2>
         </div>
         <div className="">
           {list}

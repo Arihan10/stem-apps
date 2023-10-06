@@ -112,7 +112,7 @@ export default class UsersDAO {
     static async addUser(email, first, last, password) {
         try {
             const salt = await bcrypt.genSalt(10)
-            const passHash = await bcrypt.hash(password, salt)
+            const passHash = await bcrypt.hash(password, salt) 
 
             const userDoc = {
                 email: email, 
@@ -121,8 +121,11 @@ export default class UsersDAO {
                 passHash: passHash,
                 status: "pending",
             }
-    
-            return await users.insertOne(userDoc)
+
+            const preUsers = await this.getUserByEmail(email); 
+            console.log(preUsers); 
+            if (!preUsers) return await users.insertOne(userDoc)
+            else return { "error": "didn't work" }
         } catch (e) {
             console.error(`Unable to create user: ${e}`)
             return { error: e }
