@@ -30,7 +30,7 @@ function Auth()
     }; 
 
     const redirLogin = () => {
-        nav('/auth'); 
+        nav('../auth'); 
     }
 
     return (

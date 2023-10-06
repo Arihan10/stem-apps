@@ -15,37 +15,44 @@ import UserInfo from './UserInfo';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/stem-apps",
     element: <NavWrapper/>,
     errorElement: <NotFound/>,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/form",
+        path: "form",
         element: <Form/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/complete",
-        element: <Complete/>
+        path: "complete",
+        element: <Complete/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/dash",
-        element: <Dashboard/>
+        path: "dash",
+        element: <Dashboard/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/auth",
-        element: <Auth/>
+        path: "auth",
+        element: <Auth/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/signup",
-        element: <Signup/>
+        path: "signup",
+        element: <Signup/>,
+        errorElement: <NotFound/>,
       },
       {
-        path: "/info",
-        element: <UserInfo/>
+        path: "info",
+        element: <UserInfo/>,
+        errorElement: <NotFound/>
       }
     ]
   },

@@ -109,7 +109,7 @@ function Form()
   useEffect(() => {
       if (!context.user) // or some field ***
       {
-        nav('/auth');
+        nav('../auth'); 
       }
   }, [])
 
@@ -226,7 +226,7 @@ function Form()
   const submit = () => {
     console.log(answers); 
     formService.Submit(answers);
-    nav('/complete');
+    nav('../complete'); 
     //this.props.history.push('/complete')
   }
 

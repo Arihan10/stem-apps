@@ -21,27 +21,27 @@ function Navbar()
     const navItems = [
         {
             text: "Home",
-            href: "/"
+            href: ""
         },
         {
             auth: true,
             text: "User",
-            href: "/info"
+            href: "info"
         },
         {
             auth: true,
             text: "Dashboard",
-            href: "/dash"
+            href: "dash"
         },
         {
             auth: false,
             text: "Sign in",
-            href: "/auth"
+            href: "auth"
         },
         {
             auth: false,
             text: "Sign up",
-            href: "/signup"
+            href: "signup"
         },
     ]
         console.log(context.user); 

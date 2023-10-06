@@ -18,7 +18,7 @@ function Dashboard()
     useEffect(() => {
         if (!context.user) // or some field ***
         {
-            nav('/auth');
+            nav('../auth'); 
         }
 
         const fetchData = async () => {

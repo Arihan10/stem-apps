@@ -29,7 +29,7 @@ function Auth()
                 const newResponse = await userService.GetUserByEmail(user.email); 
                 console.log(newResponse.data); 
                 context.setUser(newResponse.data);
-                nav('/form'); 
+                nav('../form'); 
             }
         } catch (e) {
             console.error(`Bruhhhhh auth error ${e}`); 
@@ -37,7 +37,7 @@ function Auth()
     }; 
 
     const redirSignup = () => {
-        nav('/signup'); 
+        nav('../signup'); 
     }
 
     return (

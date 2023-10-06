@@ -7,14 +7,7 @@ import { UserContext } from ".";
 function Home()
 {
     const nav = useNavigate(0);
-    const state = useState(UserContext);
     const context = useContext(UserContext)
-
-    useState(() => 
-    {
-      console.log("example:")
-      state.user = {name: "arihan sharma", email: "sofwarearihan@gmail.com"}
-    })
 
     return (
         <div className="overflow-hidden w-full min-h-screen flex items-center justify-center">
@@ -28,7 +21,9 @@ function Home()
                     CLUB
                 </h2>
               </div>
-                <button onClick={() => {nav('form')}} type="button" className="font-sg pointer-events-auto text-white bg-green-500 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-3 text-center mt-10 hover:bg-green-400">
+                <button onClick={() => {
+                    nav('./form'); 
+                  }} type="button" className="font-sg pointer-events-auto text-white bg-green-500 focus:ring-2 focus:outline-none transition-all duration-200 font-medium rounded-lg text-lg px-12 py-3 text-center mt-10 hover:bg-green-400">
                     APPLY NOW!
                 </button>
             </div>
