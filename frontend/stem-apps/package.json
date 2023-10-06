@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://Arihan10.github.io/stem-apps",
   "dependencies": {
+    "@headlessui/react": "^0.0.0-insiders.1469b85",
+    "@heroicons/react": "^2.0.18",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

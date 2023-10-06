@@ -94,7 +94,6 @@ code {
   /* margin: 1rem; */
   border-radius: 2rem;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .mainContent {
@@ -150,15 +149,15 @@ code {
 }
 
 .card {
-    width: 100vw;
-    height: 98vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 0;
-    overflow: hidden;
-    top: 0;
+  width: 100vw;
+  height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  top: 0;
 }
 
 .card2 {
@@ -170,7 +169,6 @@ code {
   position: relative;
   border-radius: 0;
   overflow: hidden;
-  cursor: pointer;
   top: 0;
 }
 
