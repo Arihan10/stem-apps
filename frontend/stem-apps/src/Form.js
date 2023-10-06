@@ -105,7 +105,7 @@ function TextResponse({ id, answers, long, placeholder = '' }) {
     long ?
       (<textarea onChange={e => {
         answers[id] = e.target.value;
-      }} placeholder={placeholder} maxLength="390" className="mt-3 resize-none bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 h-48 pointer-events-auto" />) :
+      }} placeholder={placeholder} maxLength="650" className="mt-3 resize-none bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 h-48 pointer-events-auto" />) :
 
       (<input onChange={e => {
         answers[id] = e.target.value;
