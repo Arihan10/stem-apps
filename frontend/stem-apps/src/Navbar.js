@@ -46,7 +46,6 @@ function Navbar()
     ]
         console.log(context.user); 
         filtered = navItems.filter(e => {
-            //console.log((("auth" in e) === false) || ((e.auth === true) != (context.user !== null)) + " shit " + e.text + " fuck " + ("auth" in e)); 
             console.log((("auth" in e) === false) + " " + e.text + " " + ((e.auth === true) === (context.user != null)) + " hello " + (context.user != null))
             return (("auth" in e) === false) || ((e.auth === true) === (context.user != null))
         }); 
