@@ -1,6 +1,7 @@
 import app from "./server.js"
 import mongodb from "mongodb"
 import dotenv from "dotenv"
+import https from "https"
 import ApplicationsDAO from "./dao/applicationsDAO.js"
 import UsersDAO from "./dao/usersDAO.js"
 dotenv.config()
@@ -29,3 +30,23 @@ MongoClient.connect(
         console.log(`listening on port ${port}`)
     })
 })
+
+function makeRequest() {
+    https.get('https://stem-apps.onrender.com/api/v1/applications', (resp) => {
+        let data = '';
+
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        resp.on('end', () => {
+            console.log(data);
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+}
+
+// Request every 15 mins
+setInterval(makeRequest, 15 * 60 * 1000); 
