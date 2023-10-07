@@ -94,6 +94,9 @@ export default class UsersDAO {
 
     static async getUserByEmail(email) {
         try {
+            email = email.toLowerCase(); 
+            console.log(email); 
+
             const pipeline = [
                 {
                     $match: {
@@ -115,7 +118,7 @@ export default class UsersDAO {
             const passHash = await bcrypt.hash(password, salt) 
 
             const userDoc = {
-                email: email, 
+                email: email.toLowerCase(), 
                 first: first, 
                 last: last,
                 passHash: passHash,

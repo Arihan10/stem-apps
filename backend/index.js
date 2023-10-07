@@ -40,7 +40,7 @@ function makeRequest() {
         });
 
         resp.on('end', () => {
-            console.log(data);
+            console.log("sent request to myself");
         });
 
     }).on("error", (err) => {

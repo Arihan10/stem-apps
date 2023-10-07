@@ -34,6 +34,16 @@ class FormService
 
         });
     }
+
+    async GetAllApplications() {
+        try {
+            const response = await http.get("/api/v1/applications"); 
+            console.log(response); 
+            return response; 
+        } catch(error) {
+            console.log(error.response); 
+        }
+    }
 }
 
 const formService = new FormService();

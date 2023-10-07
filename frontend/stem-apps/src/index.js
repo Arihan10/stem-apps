@@ -12,6 +12,7 @@ import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFound from './not-found';
 import Signup from './Signup';
 import UserInfo from './UserInfo';
+import ViewApplicationsPortal from './ViewApplicationsPortal';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: "info",
         element: <UserInfo/>,
+        errorElement: <NotFound/>
+      },
+      {
+        path: "apps",
+        element: <ViewApplicationsPortal/>,
         errorElement: <NotFound/>
       }
     ]

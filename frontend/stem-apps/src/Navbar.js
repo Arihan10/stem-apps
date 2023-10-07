@@ -43,6 +43,11 @@ function Navbar()
             text: "Sign up",
             href: "signup"
         },
+        {
+            auth: true,
+            text: "View Applications",
+            href: "apps"
+        }
     ]
         filtered = navItems.filter(e => {
             return (("auth" in e) === false) || ((e.auth === true) === (context.user != null))

@@ -105,17 +105,17 @@ function TextResponse({ id, answers, long, placeholder = '' }) {
     long ?
       (<textarea onChange={e => {
         answers[id] = e.target.value;
-      }} placeholder={placeholder} maxLength="650" className="mt-3 resize-none bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 h-48 pointer-events-auto" />) :
+      }} placeholder={placeholder} className="mt-3 resize-none bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 h-48 pointer-events-auto" />) :
 
       (<input onChange={e => {
         answers[id] = e.target.value;
-      }} placeholder={placeholder} maxLength="60" className="mt-3 bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 pointer-events-auto" />)
+      }} placeholder={placeholder} className="mt-3 bg-slate-500/5 border-2 border-gray-800/20 rounded-lg py-2 px-4 focus:border-zinc-900 focus:outline-none focus:ring-0 transition-colors duration-300 pointer-events-auto" />)
   );
 }
 
 function Question({ question, desc, response }) {
   return (
-    <div className=" bg-zinc-950/70 backdrop-blur-[7px] py-7 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 mb-2 rounded-xl border-zinc-900/50">
+    <div className="bg-zinc-950/70 backdrop-blur-[7px] py-7 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 mb-2 rounded-xl border-zinc-900/50">
       <h1 className="font-bold text-2xl font-sg">{question}</h1>
       <p className="text-gray-300 font-sg">{desc}</p>
       {response}
