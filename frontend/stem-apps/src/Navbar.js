@@ -4,7 +4,7 @@ import { UserContext } from ".";
 
 function NavItem(data) {
     return (
-        <div className="p-4 py-2 text-white/60 hover:text-white/90 hover:font-semibold duration-200">
+        <div className="p-4 py-2 text-white/60 hover:text-white/90 hover:font-semibold duration-200 text-xs md:text-base">
             <Link to={data.href}>
                 {data.text}
             </Link>
