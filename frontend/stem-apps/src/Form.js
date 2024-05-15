@@ -18,15 +18,8 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 let answers = {
   "user_id": "",
   "q1": "",
-  "q2": false,
-  "team": 0,
-  "t0q1": "",
-  "t0q2": "",
-  "t1q1": "",
-  "t1q2": "",
-  "t2q1": "",
-  "t2q1a": "",
-  "t2q2": "",
+  "q2": "",
+  "q3": "",
 }
 
 
@@ -154,18 +147,18 @@ function Form() {
 
   let form = [
     {
-      question: "Have you ever attended an MLH hackathon before?",
-      description: "Major League Hacking",
+      question: "How many hackathons have you attended before?",
+      description: "Past experience with hackathons.",
       response:
-        <Dropdown options={["Yes", "No"]}
+        <Dropdown options={["0", "1-2", "2-4", "5+"]}
           id={"q1"}
           placeholder={'Select'}
           answers={answers}
         />,
     },
     {
-      question: "What event organizing experience do you have?",
-      description: "Lst all related organizations.",
+      question: "What are you most excited to do at BearHacks?",
+      description: "Make the most of bearhacks!",
       response:
         <TextResponse long={true}
           id={"q2"}
@@ -174,84 +167,13 @@ function Form() {
         />,
     },
     {
-      question: "What team are you interested in leading?",
-      description: "If accepted, we will determine whether you are fit for an Executive Leader of Executive role.",
-      response:
-        <Dropdown options={["Marketing & Outreach", "Logistics & Finance", "Technology"]}
-          id={"team"}
-          answers={answers}
-          placeholder={'Select Team'}
-          setSecondaryState={setTeam}
-        />,
-    },
-    {
-      team: "Marketing & Outreach",
-      question: "Do you have experience managing any public facing social media?",
-      description: "Instagram/Facebook/Google Clasrooom, etc.",
+      question: "What is your favourite BEAR species?",
+      description: "Be creative with your response!",
       response:
         <TextResponse long={true}
-          id={"t0q1"}
+          id={"q3"}
           answers={answers}
-        />,
-    },
-    {
-      team: "Marketing & Outreach",
-      question: "Do you have experience with graphic design?",
-      description: "Feel free to provide image links.",
-      response:
-        <TextResponse long={true}
-          id={"t0q2"}
-          answers={answers}
-        />,
-    },
-    {
-      team: "Technology",
-      question: "What technical experience do you have?",
-      description: "List any related clubs, organizations, activities and projects, as well as knowledge of tech-based frameworkes, services and fields.",
-      response:
-        <TextResponse long={true}
-          id={"t1q1"}
-          answers={answers}
-        />,
-    },
-    {
-      team: "Technology",
-      question: "What teaching experience do you have?",
-      description: "List any related organizations.",
-      response:
-        <TextResponse long={true}
-          id={"t1q2"}
-          answers={answers}
-        />,
-    },
-    {
-      team: "Logistics & Finance",
-      question: "Have you ever spoken to or had any interaction with the school administration?",
-      description: "List the schools and people involved.",
-      response:
-        <TextResponse long={true}
-          id={"t2q1"}
-          answers={answers}
-        />,
-    },
-    {
-      team: "Logistics & Finance",
-      question: "Are you involved in an adminsitrative/leadership position in any other clubs/organizations?",
-      description: "We need to know this for logistical reasons.",
-      response:
-        <TextResponse long={true}
-          id={"t2q1a"}
-          answers={answers}
-        />,
-    },
-    {
-      team: "Logistics & Finance",
-      question: "Do you have experience doing accounting or finances?",
-      description: "List any related organizations.",
-      response:
-        <TextResponse long={true}
-          id={"t2q2"}
-          answers={answers}
+          placeholder='Enter explanation...'
         />,
     },
   ];
@@ -275,8 +197,8 @@ function Form() {
       <CardEffect />
       <div className="mainContent p-10 bg-zinc-950/10 backdrop-blur-[5px] w-full md:w-9/12 max-w-6xl flex flex-col gap-5">
         <div className="bg-zinc-950/70 backdrop-blur-[10px] py-5 px-7 text-gray-200 flex flex-col gap-2 w-full bg-black border-2 rounded-xl border-zinc-900">
-          <h1 className="font-bold text-7xl font-sg">STEM CLUB</h1>
-          <h2 className="text-gray-500">Executive Applications</h2>
+          <h1 className="font-bold text-7xl font-sg">BEAR HACKS</h1>
+          <h2 className="text-gray-500">Applications</h2>
         </div>
         <div className="flex flex-col gap-5">
           {list}
