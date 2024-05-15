@@ -15,10 +15,10 @@ function Home()
             <div className="mainContent itemsCenter pb-[7rem] flex flex-col items-center">
               <div>
                 <h1 className="font-sg font-bold text-6xl md:text-9xl bg-gradient-to-r from-lime-300 to-green-400 bg-clip-text text-transparent">
-                    STEM
+                    BEAR
                 </h1>
                 <h2 className="text-white font-sg capitalize font-bold text-3xl tracking-[0.4em] text-center">
-                    CLUB
+                    HACKS
                 </h2>
               </div>
                 <button onClick={() => {
