@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/stem-apps/static/css/main.849b1e6f.css",
-    "main.js": "/stem-apps/static/js/main.fa09df78.js",
+    "main.js": "/stem-apps/static/js/main.d047dab6.js",
     "static/js/787.cbac5d82.chunk.js": "/stem-apps/static/js/787.cbac5d82.chunk.js",
     "static/media/logo.svg": "/stem-apps/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/stem-apps/index.html",
     "main.849b1e6f.css.map": "/stem-apps/static/css/main.849b1e6f.css.map",
-    "main.fa09df78.js.map": "/stem-apps/static/js/main.fa09df78.js.map",
+    "main.d047dab6.js.map": "/stem-apps/static/js/main.d047dab6.js.map",
     "787.cbac5d82.chunk.js.map": "/stem-apps/static/js/787.cbac5d82.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.849b1e6f.css",
-    "static/js/main.fa09df78.js"
+    "static/js/main.d047dab6.js"
   ]
 }
